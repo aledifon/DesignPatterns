@@ -273,7 +273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &410087040
 Light:
   m_ObjectHideFlags: 0
@@ -446,6 +446,7 @@ GameObject:
   - component: {fileID: 1219649993}
   - component: {fileID: 1219649992}
   - component: {fileID: 1219649991}
+  - component: {fileID: 1219649997}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Untagged
@@ -460,11 +461,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219649990}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0417e2253b979034688366578363b1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
+  prefab: {fileID: 4651863322855147414, guid: 8a1c6af8a8407aa4790d9298bae268e3, type: 3}
+  minimumAmount: 5
 --- !u!114 &1219649992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,11 +475,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219649990}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1db71d0dd48d80c42a30da97588a71a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shooter
+  shootRate: 0.5
+  speed: 2
+  projectilePool: {fileID: 1219649991}
 --- !u!65 &1219649993
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -570,63 +576,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &866618474966716978
-PrefabInstance:
+--- !u!114 &1219649997
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2019937143393614992, guid: 8a1c6af8a8407aa4790d9298bae268e3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 2019937143393614992, guid: 8a1c6af8a8407aa4790d9298bae268e3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2019937143393614992, guid: 8a1c6af8a8407aa4790d9298bae268e3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 2019937143393614992, guid: 8a1c6af8a8407aa4790d9298bae268e3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2019937143393614992, guid: 8a1c6af8a8407aa4790d9298bae268e3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2019937143393614992, guid: 8a1c6af8a8407aa4790d9298bae268e3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2019937143393614992, guid: 8a1c6af8a8407aa4790d9298bae268e3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2019937143393614992, guid: 8a1c6af8a8407aa4790d9298bae268e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2019937143393614992, guid: 8a1c6af8a8407aa4790d9298bae268e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2019937143393614992, guid: 8a1c6af8a8407aa4790d9298bae268e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4651863322855147414, guid: 8a1c6af8a8407aa4790d9298bae268e3, type: 3}
-      propertyPath: m_Name
-      value: Projectile
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8a1c6af8a8407aa4790d9298bae268e3, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219649990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8cd9bef9d3247f4e92d9d05cb999252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoolExample
+  defaultCapacity: 5
+  maxPoolSize: 6
+  prefab: {fileID: 4651863322855147414, guid: f2de47f84392f4c43a90f102fe9ce962, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -635,4 +599,3 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1219649996}
-  - {fileID: 866618474966716978}

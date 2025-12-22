@@ -1,16 +1,25 @@
 using UnityEngine;
+using System;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float speed;
+    [SerializeField] private float lifeTime;
 
-    // Update is called once per frame
-    void Update()
+    private Rigidbody rb;
+    
+    void Awake()
     {
-        
+        rb = GetComponent<Rigidbody>();   
+    }
+    public void Initialize(Vector3 direction)
+    {
+        rb.linearVelocity = direction * speed;
+
+        Invoke(nameof(Despawn), lifeTime);
+    }
+    public void Despawn()
+    {
+        gameObject.SetActive(false);
     }
 }
